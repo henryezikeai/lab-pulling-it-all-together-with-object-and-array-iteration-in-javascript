@@ -114,3 +114,75 @@ function gameObject() {
         },
     };
 }
+
+let data = gameObject()
+
+let playerName = 'Ben Gordon'
+let teamName = "Charlotte Hornets"
+
+function numPointsScored (playerName) {
+for (key in data){
+    if (data[key]['players'][playerName]){
+        console.log(data[key]['players'][playerName]['points'])
+    }
+}
+return data[key]['players'][playerName]['points']
+}
+
+
+function shoeSize (playerName) {
+for (key in data){
+    if (data[key]['players'][playerName]){
+        console.log(data[key]['players'][playerName]['shoe'])
+    }
+}
+return data[key]['players'][playerName]['shoe']
+}
+
+function teamColors (teamName) {
+for (key in data){
+    if (data[key]['teamName'] === teamName){
+        console.log(data[key]['colors'])
+    }
+}
+return data[key]['colors']
+}
+
+function teamNames() {
+    teamNameArr = []
+    for (key in data){
+        teamNameArr.push(data[key]['teamName'])
+    }
+    console.log(teamNameArr)
+    return teamNameArr
+}
+
+
+function playerNumbers(teamName) {
+    playersNos = []
+    for (key in data){
+        if (data[key]['teamName'] === teamName){
+                for (key2 in data[key]['players']) {
+                    playersNos.push(data[key]['players'][key2]['number'])
+                }
+            }
+        }
+        console.log(playersNos)
+        return playersNos
+    }
+
+function playerStats (playerName) {
+for (key in data){
+    if (data[key]['players'][playerName]){
+        console.log(data[key]['players'][playerName])
+    }
+}
+return data[key]['players'][playerName]
+}
+
+numPointsScored(playerName)
+shoeSize(playerName)
+teamColors(teamName)
+teamNames()
+playerNumbers("Brooklyn Nets")
+playerStats(playerName)
